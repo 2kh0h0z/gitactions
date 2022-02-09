@@ -1,18 +1,18 @@
-name: Test
+name: Super-Linter
 
 on: push
 
 jobs:
-    testing:
-    name: code-base
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    super-lint:
+        name: code-base
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
         
-      - name: Run Test
-        uses: github/test@v3
+          - name: Run Test
+            uses: github/super-linter@v3
         
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            env:
+                DEFAULT_BRANCH: main
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
