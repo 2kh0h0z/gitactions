@@ -1,4 +1,4 @@
-name: Super-Linter
+name: Black-Check
 
 on: push
 
@@ -10,8 +10,11 @@ jobs:
           - name: Checkout code
             uses: actions/checkout@v2
         
-          - name: Super-Linter
-            uses: github/super-linter@v4.8.7
+          - name: Black Check
+            uses: jpetrucciani/black-check@f5c6876aea54003a0db0eb85fa56cc2826aef135
+            with:
+                path: .
+                flags: --check
             env:
                 DEFAULT_BRANCH: main
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
